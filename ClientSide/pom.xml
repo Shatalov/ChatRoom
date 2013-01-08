@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>ChatRoom</artifactId>
+        <groupId>com.teamdev.students.chat</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>ClientSide</artifactId>
+    <packaging>war</packaging>
+    <name>ClientSide Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <build>
+        <finalName>ClientSide</finalName>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.teamdev.students.chat</groupId>
+            <artifactId>ServerSide</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
+
+
