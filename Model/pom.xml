@@ -9,16 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ServerSide</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.teamdev.students.chat</groupId>
-            <artifactId>Model</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-    </dependencies>
+    <artifactId>Model</artifactId>
 
 
 </project>

@@ -1,17 +1,35 @@
 package com.teamdev.students.chat.model;
 
 
-import com.teamdev.students.chat.controller.dto.UserResponse;
-
-public class User extends UserResponse {
+public class User {
 
     private long numberOfShownMessages;
     private Color userColor;
+    private long idUser;
+    private String nickName;
+
 
     public User(long userId, String nickName, long numberOfShownMessages, Color userColor) {
-        super(userId, nickName);
+        this.idUser = userId;
+        this.nickName = nickName;
         this.numberOfShownMessages = numberOfShownMessages;
         this.userColor = userColor;
+    }
+
+      public long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(long userId) {
+        this.idUser = userId;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
 
