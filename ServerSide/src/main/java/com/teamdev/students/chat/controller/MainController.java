@@ -83,7 +83,7 @@ public class MainController {
 
             LOGGER.debug("Get nickname: " + nickname);
 
-            return "WEB-INF/jsp/messages.jsp";
+            return "jsp/messages.jsp";
         } else {
             String errorMessage = "Your nickName isn't uniqueness. Enter the other.";
 
@@ -94,7 +94,7 @@ public class MainController {
 
             LOGGER.debug("isn't uniqueness nickname: " + nickname);
 
-            return "WEB-INF/jsp/enterChat.jsp";
+            return "jsp/enterChat.jsp";
         }
     }
 
@@ -111,7 +111,7 @@ public class MainController {
 
         LOGGER.debug("We are in first conroller");
 
-        return "WEB-INF/jsp/enterChat.jsp";
+        return "jsp/enterChat.jsp";
     }
 
 }

@@ -1,4 +1,8 @@
-$(function () {
+console.log("Blyaaaaaa");
+
+$(document).ready(function () {
+//$(function () {
+
     console.log("Setting up the client-side services...");
 
     setInterval(onTimeOutFunction, 1000);

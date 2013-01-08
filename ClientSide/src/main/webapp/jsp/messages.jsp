@@ -4,7 +4,7 @@
     <%--&lt;%&ndash;<script src="${pageContext.request.servletPath}../../../js/chat.js"></script>&ndash;%&gt;--%>
     <%--<script src="<c:url value="/js/chat.js"/>"></script>--%>
     <%--<script src="../../js/chat.js"></script>--%>
-    <%--<script src="/js/chat.js"></script>--%>
+    <script src="../js/chat.js"></script>
     <%--<script src="../../../chat.js"></script>--%>
 
 </head>
