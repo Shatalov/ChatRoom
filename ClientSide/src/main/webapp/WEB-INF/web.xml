@@ -29,12 +29,12 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/enterChat</url-pattern>
     </servlet-mapping>
 
 
     <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+        <welcome-file>enterChat</welcome-file>
     </welcome-file-list>
 
 </web-app>

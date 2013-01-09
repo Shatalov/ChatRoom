@@ -16,7 +16,7 @@ public class User {
         this.userColor = userColor;
     }
 
-      public long getIdUser() {
+    public long getIdUser() {
         return idUser;
     }
 

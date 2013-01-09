@@ -8,7 +8,7 @@
 <body>
 <div align='center'>
 
-    <form action="user.form" method="post">
+    <form action="chat.form" method="post">
 
         <h1>Enter chat page</h1>
 

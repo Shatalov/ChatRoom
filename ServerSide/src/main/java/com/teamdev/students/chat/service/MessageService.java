@@ -19,7 +19,7 @@ public class MessageService {
      * Finds the message by the ID provided
      *
      * @param chatContext, the repository of current messages and user
-     * @param userId ID of the user
+     * @param userId       ID of the user
      * @return the message that user haven't seen yet
      */
     public MessageResponse getMessagesForUser(ChatContext chatContext, long userId) {
@@ -39,7 +39,7 @@ public class MessageService {
                 user.addNumberOfShownMessages();
                 if (mess != null) {
 
-                    String colorText = "<span style=\"color:" + user.getUserColor() + "\"> "   + mess.getText() + "</span>";
+                    String colorText = "<span style=\"color:" + user.getUserColor() + "\"> " + mess.getText() + "</span>";
 
                     if (mess.isToAll()) {
                         messResp = new MessageResponse(colorText,

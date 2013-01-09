@@ -70,7 +70,7 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/user.form", method = RequestMethod.POST)
+    @RequestMapping(value = "/chat.form", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     public String enterUser(@RequestParam("nickName") String nickname,
                             @RequestParam("colorSelected") Color colorUser,
@@ -83,7 +83,7 @@ public class MainController {
 
             LOGGER.debug("Get nickname: " + nickname);
 
-            return "jsp/messages.jsp";
+            return "WEB-INF/jsp/messages.jsp";
         } else {
             String errorMessage = "Your nickName isn't uniqueness. Enter the other.";
 
@@ -94,11 +94,11 @@ public class MainController {
 
             LOGGER.debug("isn't uniqueness nickname: " + nickname);
 
-            return "jsp/enterChat.jsp";
+            return "WEB-INF/jsp/enterChat.jsp";
         }
     }
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/enterChat")
     @ResponseStatus(HttpStatus.OK)
     public String enterUser(Model model) {
 
@@ -111,7 +111,7 @@ public class MainController {
 
         LOGGER.debug("We are in first conroller");
 
-        return "jsp/enterChat.jsp";
+        return "WEB-INF/jsp/enterChat.jsp";
     }
 
 }
