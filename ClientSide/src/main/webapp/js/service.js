@@ -40,13 +40,30 @@ ChatService.prototype.getMessages = function () {
                     if (data.toAllResp == false) {
                         textOut += data.toUserNick + " : ";
                     }
-                    textOut += data.textResp;
+
+                    var parsedText = replaceSymbolsInText(data.textResp);
+
+                    textOut += parsedText;
 
                     $(document).trigger(Events.NEW_MESSAGE_IN_CHAT, textOut);
                 }
             });
     }
 }
+
+var RegexpPatterns = {
+    bold_text: /\*\s*([^\*|\s]+)\s*\*/g,
+    underlined_text: /_\s*([^_|\s]+)\s*_/g,
+    strikethrough_text: /-\s*([^-|\s]+)\s*-/g,
+    link_text: /\[\s*([\S].+)\!(.+)\s*\]/g
+};
+
+function replaceSymbolsInText (mess) {
+    return  mess.replace(RegexpPatterns.bold_text, "<b>$1</b>").
+        replace(RegexpPatterns.underlined_text, "<u>$1</u>").
+        replace(RegexpPatterns.strikethrough_text, "<s>$1</s>").
+        replace(RegexpPatterns.link_text, '<a href="$2">$1</a>');
+ };
 
 ChatService.prototype.postMessageOnServer = function (message) {
     message.userIdM = this.userIdT;

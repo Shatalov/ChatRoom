@@ -3,9 +3,11 @@ package com.teamdev.students.chat.service;
 import com.teamdev.students.chat.ChatContext;
 import com.teamdev.students.chat.controller.dto.MessagePostRequest;
 import com.teamdev.students.chat.controller.dto.MessageResponse;
+import com.teamdev.students.chat.model.Color;
 import com.teamdev.students.chat.model.Message;
 import com.teamdev.students.chat.model.User;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -14,6 +16,9 @@ import java.util.Date;
 public class MessageService {
 
     private static final Logger LOGGER = Logger.getLogger(MessageService.class);
+
+    @Autowired
+    private UtilService util;
 
     /**
      * Finds the message by the ID provided
@@ -39,17 +44,18 @@ public class MessageService {
                 user.addNumberOfShownMessages();
                 if (mess != null) {
 
-                    String colorText = "<span style=\"color:" + user.getUserColor() + "\"> " + mess.getText() + "</span>";
+                    Color postedUserColor = util.findUserColorById(chatContext, mess.getUserId());
+                    String colorText = "<span style=\"color:" + postedUserColor + "\"> " + mess.getText() + "</span>";
 
                     if (mess.isToAll()) {
                         messResp = new MessageResponse(colorText,
                                 mess.isToAll(),
-                                findUserNameById(chatContext, mess.getUserId()), "");
+                                util.findUserNameById(chatContext, mess.getUserId()), "");
                     } else {
                         messResp = new MessageResponse(colorText,
                                 mess.isToAll(),
-                                findUserNameById(chatContext, mess.getUserId()),
-                                findUserNameById(chatContext, mess.getToUserId()));
+                                util.findUserNameById(chatContext, mess.getUserId()),
+                                util.findUserNameById(chatContext, mess.getToUserId()));
                     }
                 }
 
@@ -59,13 +65,6 @@ public class MessageService {
         return null;
     }
 
-    private String findUserNameById(ChatContext chatContext, long userId) {
-        User user = chatContext.getUserById(userId);
-        if (user != null) {
-            return user.getNickName();
-        }
-        return null;
-    }
 
     public void post(ChatContext chatContext, MessagePostRequest newMessage) {
 

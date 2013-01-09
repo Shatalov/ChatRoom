@@ -1,4 +1,4 @@
-var TimeOut = {INTERVAL_FOR_REQUEST:3000}
+var TimeOut = {INTERVAL_FOR_REQUEST:1000}
 
 $(document).ready(function () {
     console.log("Setting up the client-side ...");
@@ -22,3 +22,5 @@ $(document).ready(function () {
     });
 
 });
+
+
